@@ -1,20 +1,29 @@
-# Instalação do Quartus Prime em Linux
+# Instalação do Quartus Prime em Sistemas Operacionais Linux
 
 > Tutorial adaptado de [https://github.com/arthurmteodoro/install-quartus-linux](https://github.com/arthurmteodoro/install-quartus-linux)
 
 O Quartus Prime é a ferramenta para desenvolvimento da Intel para FPGAs. Através dela, é possível desenvolver circuitos digitais com o uso de diagramas de bloco, ou utilizando uma HDL -- Hardware Description Language, tal como VHDL ou (System)Verilog. A ferramenta possui suporte para os sistemas operacionais Windows ou Linux. Entretanto, no ambiente Linux, sua instalação não é tão simples quanto no Windows.
 
-Este tutorial foi executado e testado em um sistema operacional GNU/Linux Ubuntu 20.01.1 LTS. Todavia, versões anteriores, ou mesmo outras distribuições baseada no Debian/Ubuntu também podem utilizá-lo com pequenas diferenças, principalmente no que tange a biblioteca _libpng12-0_, uma vez que tal biblioteca ainda pode ser suportada pelo seu sistema.
+Segundo a [a página de suporte da Intel](https://www.intel.com/content/www/us/en/programmable/support/support-resources/download/os-support.html), as ferramentas de desenvolvimento para FPGA da Intel apresentam suporte para os seguintes sistemas GNU/Linux (a lista apresenta apenas as versões não-comerciais):
 
-## Fazendo o download da ferramenta
+- CentOS 7.5 e 8.0
+- Ubuntu 16.04 LTS
+- Ubuntu 18.04 LTS
+- Ubuntu 20.04 LTS
+
+> Note que na mesma página o ModelSim não possui suporte para as distribuições GNU/Linux (não comerciais). Ao longo deste tutorial iremos entender o que pode ser feito para reverter essa limitação.
+
+Este tutorial foi executado e testado em um sistema operacional GNU/Linux Ubuntu 20.04.1 LTS. Todavia, versões anteriores, ou mesmo outras distribuições Linux também podem utilizá-lo com pequenas diferenças, principalmente no que tange a biblioteca _libpng12-0_, uma vez que tal biblioteca ainda pode ser suportada pelo seu sistema.
+
+## Fazendo o Download da Ferramenta
 
 Existem algumas versões do mesmo, sendo a versão Pro a mais completa e a Lite a mais simplista. Neste tutorial, será apresentada a instalação da versão Lite, uma vez que esta é a única versão gratis do mesmo. A ferramenta pode ser baixada no site da [Altera](http://fpgasoftware.intel.com/18.0/?edition=lite&platform=linux&download_manager=dlm3).
 
 Para realizar o download, é necessário uma conta no Programa de FPGAs Intel, porém, a criação desta conta é gratuita, podendo ser realizada [neste link](https://www.intel.com/content/www/us/en/forms/fpga/fpga-individual-registration.html).
 
-É recomandada o download da versão 18.0, escolhendo a opção de Arquivos Combinados (_Combined Files_), que possui o tamanho de 6.2 GB.
+É recomendado que você realize o download da versão mais recente, desde que haja suporte para o seu dispositivo. Para a versão 20.1.1, escolhendo a opção de Arquivos Combinados (_Combined Files_), que possui o tamanho de 6.4 GB.
 
-## Preparando o sistema
+## Preparando o Sistema
 
 A partir da mudança de Quartus II para Quartus Prime começou a apresentar suporte nativo a sistemas 64-_bits_. Porém, a ferramenta de simulação _ModelSim_ não! Logo, ainda é necessário a instalação de algumas bibliotecas 32-_bits_. A instalação de tais bibliotecas pode ser feita executando os comandos em um terminal:
 
@@ -166,6 +175,8 @@ Seguindo este tutorial, o Quartus Prime e o ModelSim podem ser instalado em um s
 Certifique-se de utilizar sempre a versão mais recente do Quartus Prime, a não ser que dependa do suporte a algum dispositivo legado, que já não tem mais suporte.
 
 ## Fontes e Recursos
+
+- [Intel® FPGA Software Installation and Licensing](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/quartus_install.pdf) (oficial)
 
 - [Altera Design Software - Arch Linux](https://wiki.archlinux.org/index.php/Altera_Design_Software)
 
