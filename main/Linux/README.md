@@ -17,9 +17,9 @@ Este tutorial foi executado e testado em um sistema operacional GNU/Linux Ubuntu
 
 ## Fazendo o Download da Ferramenta
 
-Existem algumas versões do mesmo, sendo a versão Pro a mais completa e a Lite a mais simplista. Neste tutorial, será apresentada a instalação da versão Lite, uma vez que esta é a única versão gratis do mesmo. A ferramenta pode ser baixada no site da [Altera](http://fpgasoftware.intel.com/18.0/?edition=lite&platform=linux&download_manager=dlm3).
+Existem algumas versões do mesmo, sendo a versão Pro a mais completa e a Lite a mais simplista. Neste tutorial, será apresentada a instalação da versão Lite, uma vez que esta é a única versão gratis do mesmo. A ferramenta pode ser baixada no site da [Intel](https://fpgasoftware.intel.com/?edition=lite&platform=linux).
 
-Para realizar o download, é necessário uma conta no Programa de FPGAs Intel, porém, a criação desta conta é gratuita, podendo ser realizada [neste link](https://www.intel.com/content/www/us/en/forms/fpga/fpga-individual-registration.html).
+Para realizar o download, é necessário uma conta no Programa de FPGAs Intel. A criação desta conta é gratuita, podendo ser realizada [neste link](https://www.intel.com/content/www/us/en/forms/fpga/fpga-individual-registration.html).
 
 É recomendado que você realize o download da versão mais recente, desde que haja suporte para o seu dispositivo. Para a versão 20.1.1, escolhendo a opção de Arquivos Combinados (_Combined Files_), que possui o tamanho de 6.4 GB.
 
@@ -43,15 +43,15 @@ Na pasta components, estão os executáveis para a instalação do Quartus Prime
 
 Na tela inicial você deve aceitar a licença para a instalação do Quartus Prime. Após o termo de aceite, é possível escolher a pasta onde o Quartus Prime será instalado. Recomendamos o uso da pasta `/home/<nome_do_usuario>/intelFPGA/20.1`, muito parecida com a sugestão original, exceto pelo fato da pasta padrão ser chamada de `intelFPGA_lite`. Entretanto, esse não é o padrão para o _ModelSim_. Logo, é recomendado o uso de do diretório `intelFPGA`.
 
-Agora escolha quais componentes serão instalados. Recomendamos a instalação de cada _software_ (_Quartus Prime, Quartus Help e ModelSim_) separadamente. Logo, a escolha dos componentes deve ser igual à imagem abaixo:
+Agora escolha quais componentes serão instalados. Recomendamos a instalação de cada _software_ (_Quartus Prime, Quartus Prime Help e ModelSim_) separadamente. Logo, a escolha dos componentes deve ser igual à imagem abaixo:
 
 ![Componentes que devem ser instalados nesta parte do tutorial](https://raw.githubusercontent.com/arthurmteodoro/install-quartus-linux/master/images/1_comps_install_quartus.png)
 
-Após essa etapa, é necessário prosseguir a instalação, aguardando a tela de confirmação. Chegando neste tela, pressione o botão _Finish_ para fechar a interface gráfica. Entretanto, no terminal em que tal instalação estava sendo executado, a aplicação não terminará, sendo necessário assim fechá-la manualmente utilizando _Ctrl+C_.
+Após essa etapa, é necessário prosseguir a instalação, aguardando a tela de confirmação. Chegando nesta tela, pressione o botão _Finish_ para fechar a interface gráfica.
 
-Nesse momento, apenas o Quartus Prime foi instalado, mas ainda é necessário a instalação do _Quartus Help_ e do _ModelSim_.
+Nesse momento, apenas o Quartus Prime foi instalado, mas ainda é necessário a instalação do _Quartus Prime Help_ e do _ModelSim_.
 
-## Instalação do Quartus Help
+## Instalação do Quartus Prime Help
 
 A instalação do Quartus Help é simples, partindo apenas do comando:
 
@@ -59,7 +59,7 @@ A instalação do Quartus Help é simples, partindo apenas do comando:
 
 Após aceitar a licença, é necessário escolher em qual pasta ele será instalado, devendo ser escolhida a mesma em que o Quartus Prime foi instalada. Caso tenha escolhido a pasta recomendada neste tutorial, não é necessário se preocupar com isso, uma vez que a pasta escolhida é a padrão do Quartus Help.
 
-Assim como o Quartus Prime, após a instalação, a interface gráfica será fechada, porém a aplicação no terminal continuará ativa, sendo necessário terminá-la com _Ctrl+C_.
+Assim como o Quartus Prime, após a instalação, a interface gráfica será fechada.
 
 ## Instalação do ModelSim
 
@@ -70,8 +70,6 @@ Assim como a instalação do Quartus Help, a instalação do ModelSim é fácil,
 Uma vez executado, você deve escolher a versão _ModelSim - Intel FPGA Starter Edition_, uma vez que esta versão é gratuita do ModelSim.
 
 Assim como o Quartus Help, escolha o mesmo caminho de instalação que o Quartus Prime.
-
-O instalador, assim como os demais, não terminará após a instalação, também sendo necessário terminá-lo.
 
 ## Execução e Integração do Quartus Prime com o Sistema Operacional
 
