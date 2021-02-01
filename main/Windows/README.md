@@ -30,7 +30,7 @@ Na tela inicial você deve aceitar a licença para a instalação do Quartus Pri
 
 Agora escolha quais componentes serão instalados. Você pode escolher fazer a instalação de cada _software_ (_Quartus Prime, Quartus Help e ModelSim_) separadamente. Entretanto, para este tutorial vamos selecionar todos os componentes necessários. Você pode reduzir o tempo de instalação e o espaço ocupado em disco, retirando os _Devices_ não utilizados. Para nosso curso, precisaremos apenas do Cyclone IV. Certifique-se de selecionar a versão Starter Edition do ModelSim. A escolha dos componentes deve ser igual à imagem abaixo:
 
-![Componentes que devem ser instalados nesta parte do tutorial]()
+![Componentes que devem ser instalados nesta parte do tutorial](https://github.com/GCET231/tutorial2-instalando-quartus-modelsim/blob/main/img/windows-components.png)
 
 Após essa etapa, é necessário prosseguir com a instalação, aguardando a tela de confirmação. Chegando nesta tela, mantenha as caixas de seleção como está e pressione o botão _Finish_ para fechar a interface gráfica.
 
@@ -78,8 +78,8 @@ Agora você poderá digitar simplesmente `make` na linha de comando, em um diret
 
 ## Recursos
 
-[Intel® FPGA Software Installation and Licensing](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/quartus_install.pdf)
+- [Intel® FPGA Software Installation and Licensing](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/quartus_install.pdf)
 
-[Intel® Quartus® Prime Standard Edition User Guide: Scripting](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/ug/ug-qps-scripting.pdf)
+- [Intel® Quartus® Prime Standard Edition User Guide: Scripting](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/ug/ug-qps-scripting.pdf)
 
-[Customizing your PowerShell Profile](https://www.howtogeek.com/50236/customizing-your-powershell-profile/)
+- [Customizing your PowerShell Profile](https://www.howtogeek.com/50236/customizing-your-powershell-profile/)
