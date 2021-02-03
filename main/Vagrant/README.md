@@ -13,7 +13,7 @@ Para saber mais sobre o Vagrant acesse o [site oficial](https://www.vagrantup.co
 A instalação do Vagrant no Linux é realmente muito simples. Em uma janela do terminal instale primeiro o VirtualBox (recomendamos ainda instalar o Virtual Box Guest Additions e o Extension Pack).
 
 ```
-$ sudo apt -y install virtualbox virtualbox-guest-add virtualbox-extension
+$ sudo apt` -y install virtualbox virtualbox-guest-additions-iso virtualbox-ext-pack
 ```
 
 Siga as instruções na tela para prosseguir.
