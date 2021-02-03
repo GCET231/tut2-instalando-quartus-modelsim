@@ -41,7 +41,7 @@ Na pasta components, estão os executáveis para a instalação do Quartus Prime
 
     $ ./QuartusLiteSetup-20.1.1.720-linux.run
 
-Na tela inicial você deve aceitar a licença para a instalação do Quartus Prime. Após o termo de aceite, é possível escolher a pasta onde o Quartus Prime será instalado. Recomendamos o uso da pasta `/home/<nome_do_usuario>/intelFPGA/20.1`, muito parecida com a sugestão original, exceto pelo fato da pasta padrão ser chamada de `intelFPGA_lite`. Entretanto, esse não é o padrão para o _ModelSim_. Logo, é recomendado o uso de do diretório `intelFPGA`.
+Na tela inicial você deve aceitar a licença para a instalação do Quartus Prime. Após o termo de aceite, é possível escolher a pasta onde o Quartus Prime será instalado. Recomendamos o uso da pasta `/home/${USER}/intelFPGA/20.1`, muito parecida com a sugestão original, exceto pelo fato da pasta padrão ser chamada de `intelFPGA_lite`. Entretanto, esse não é o padrão para o _ModelSim_. Logo, é recomendado o uso de do diretório `intelFPGA`.
 
 Agora escolha quais componentes serão instalados. Recomendamos a instalação de cada _software_ (_Quartus Prime, Quartus Prime Help e ModelSim_) separadamente. Logo, a escolha dos componentes deve ser igual à imagem abaixo:
 
@@ -77,7 +77,7 @@ Assim como o Quartus Help, escolha o mesmo caminho de instalação que o Quartus
 
 Para realizar a execução do Quartus no Linux, basta executar o comando
 
-    $ /home/<nome_do_usuario>/intelFPGA/20.1/quartus/bin/quartus --64bit
+    $ /home/${USER}/intelFPGA/20.1/quartus/bin/quartus --64bit
 
 O Quartus Prime será executado normalmente.
 
@@ -85,11 +85,11 @@ O Quartus Prime será executado normalmente.
 
 A integração do Quartus Prime com o sistema operacional não é necessária, porém, altamente recomendada.
 
-#### Variável `PATH`
+#### Variável de ambiente `PATH`
 
 Para conseguir executar o Quartus Prime a partir de um terminal sem ser necessário digitar o caminho completo, pode ser criada uma variável `PATH` para isso. Primeiramente, é necessário criar o arquivo `quartus.sh` dentro do diretório `/etc/profile.d` com o seguinte conteúdo:
 
-    export PATH=$PATH:/home/<nome_do_usuario>/intelFPGA/20.1/quartus/bin
+    export PATH=$PATH:/home/${USER}/intelFPGA/20.1/quartus/bin
 
 Após isso, é necessário tornar o arquivo executável com o comando:
 
@@ -97,7 +97,7 @@ Após isso, é necessário tornar o arquivo executável com o comando:
 
 Repita o procedimento para o ModelSim, criando um arquivo `modelsim.sh` dentro do diretório `/etc/profile` utilizando agora o conteúdo:
 
-    export PATH=$PATH:/home/<nome_do_usuario>/intelFPGA/20.1/modelsim_ase/bin
+    export PATH=$PATH:/home/${USER}/intelFPGA/20.1/modelsim_ase/bin
 
 Após isso, é necessário tornar o arquivo executável com o comando:
 
@@ -129,7 +129,7 @@ O arquivo deve ser _recarregado_ usando o comando `udevadm`.
 
 Para verificar se a instalação foi bem sucedida, conecte o dispositivo FPGA e execute:
 
-    $ /home/<nome_do_usuario>/intelFPGA/20.1/quartus/bin/jtagconfig
+    $ /home/${USER}/intelFPGA/20.1/quartus/bin/jtagconfig
 
 ou simplesmente:
 
@@ -143,7 +143,7 @@ Você terá usa saída parecida com:
 Caso a saída não apresente o nome da placa, você terá um problema para a inicialização do `nios2 tools`. Para resolver este problema, execute:
 
     $ mkdir /etc/jtagd
-    $ cp /home/<nome_do_usuario>/intelFPGA/20.1/quartus/linux/pgm_parts.txt /etc/jtagd/jtagd.pgm_parts
+    $ cp /home/${USER}/intelFPGA/20.1/quartus/linux/pgm_parts.txt /etc/jtagd/jtagd.pgm_parts
 
 e reinicie o processo `jtagd`:
 
@@ -156,15 +156,15 @@ e reinicie o processo `jtagd`:
     1) USB-Blaster [2-4]
     020F30DD EP3C25/EP4CE22
 
-Caso você receba uma mensagem de erro sobre _linux64_, crie um link simbólico de _linux_ para _linux64_ em `/home/<nome_do_usuario>/intelFPGA/20.1/quartus` usando a sequência de comandos a seguir:
+Caso você receba uma mensagem de erro sobre _linux64_, crie um link simbólico de _linux_ para _linux64_ em `/home/${USER}/intelFPGA/20.1/quartus` usando a sequência de comandos a seguir:
 
-    $ ln -s /home/<nome_do_usuario>/intelFPGA/20.1/quartus/linux /home/<nome_do_usuario>/intelFPGA/20.1/quartus/linux64
+    $ ln -s /home/${USER}/intelFPGA/20.1/quartus/linux /home/${USER}/intelFPGA/20.1/quartus/linux64
 
 ## Execução do ModelSim
 
 O ModelSim, quando instalado, necessita de algumas modificações em certos arquivos para seu correto funcionamento, principalmente pelo fato do suporte ao Linux ser destinado somente a algumas bibliotecas.
 
-As alterações citadas podem ser feitas manualmente, seguindo as partes deste tutorial ou fazendo uso de um _script_ disponibilizado neste tutorial.
+As alterações citadas podem ser feitas manualmente, seguindo as partes deste tutorial ou fazendo uso de um _script_ disponibilizado [neste outro tutorial](http://twoerner.blogspot.com/2017/10/running-modelsim-altera-from-quartus.html).
 
 ## Conclusão
 
