@@ -9,7 +9,6 @@ Existem três caminhos possíveis que podem ser seguidos para configurar o seu a
 
 <div align="center">
   <h3>
-    <span> | </span>
     <a href="https://github.com/GCET231/tutorial2-instalando-quartus-modelsim/tree/main/main/Linux">
       Linux (Recomendado)
     </a>
