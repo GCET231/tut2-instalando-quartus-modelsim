@@ -13,6 +13,7 @@ Existem três caminhos possíveis que podem ser seguidos para configurar o seu a
     <a href="https://github.com/GCET231/tutorial2-instalando-quartus-modelsim/tree/main/main/Linux">
       Linux (Recomendado)
     </a>
+    <span> | </span>
     <a href="https://github.com/GCET231/tutorial2-instalando-quartus-modelsim/tree/main/main/VirtualBox">
       VirtualBox
     </a>
