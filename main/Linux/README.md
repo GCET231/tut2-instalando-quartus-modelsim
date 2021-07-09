@@ -71,6 +71,17 @@ Uma vez executado, você deve escolher a versão _ModelSim - Intel FPGA Starter 
 
 Assim como o Quartus Help, escolha o mesmo caminho de instalação que o Quartus Prime.
 
+## Configurando o ambiente de simulação
+
+Para podermos executar o ModelSim diretamente a partir do Quartus Prime para simular o funcionamento do nosso circuito, é necessário realizar uma configuração simples. Abra o Quartus Prime e acesse o painel `EDA Tool Options` acessado através do menu `Tools > Options` para especificar a localização do simulador. No campo ferente ao `ModelSim-Intel`, introduza o caminho onde se encontra o executável do ModelSim Intel FPGA Edition:
+
+- No Linux: `<QUARTUS_INSTALL_DIR>/modelsim_ase/linuxaloem`
+- No Windows: `<QUARTUS_INSTALL_DIR>/modelsim_ase/win32aloem`
+
+![Configuração do Diretório do ModelSim](https://github.com/GCET231/tutorial3-simulacao-hdl/blob/main/Quartus-Prime-ModelSim/images/91-eda_tools.png)
+
+> Observe que existem duas referências ao **ModelSim**. Certifique-se de preencher a informação acima no campo **ModelSim-Altera**.
+
 ## Execução e Integração do Quartus Prime com o Sistema Operacional
 
 ### Execução do Quartus
