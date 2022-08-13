@@ -2,9 +2,9 @@
 
 O Vagrant é uma ferramenta de construção e distribuição de ambientes de desenvolvimento.
 
-Ambientes de desenvolvimento gerenciados pelo Vagrant podem ser executados em plataformas de virtualização locais, como VirtualBox e VMware, na nuvem via AWS ou OpenStack, ou em containers, como Docker.
+Os ambientes de desenvolvimento gerenciados pelo Vagrant podem ser executados em plataformas de virtualização locais, como VirtualBox e VMware, na nuvem via AWS ou OpenStack, ou em _containers_, como Docker.
 
-Na prática, o Vagrant reúne o poder da virtualização com a automação por meio de scripts.
+Na prática, o Vagrant reúne o poder da virtualização com a automação por meio de _scripts_.
 
 Para saber mais sobre o Vagrant acesse o [site oficial](https://www.vagrantup.com/).
 
@@ -12,16 +12,16 @@ Para saber mais sobre o Vagrant acesse o [site oficial](https://www.vagrantup.co
 
 A instalação do Vagrant no Linux é realmente muito simples. Em uma janela do terminal instale primeiro o VirtualBox (recomendamos ainda instalar o Virtual Box Guest Additions e o Extension Pack).
 
-```
-$ sudo apt` -y install virtualbox virtualbox-guest-additions-iso virtualbox-ext-pack
+```bash
+sudo apt` -y install virtualbox virtualbox-guest-additions-iso virtualbox-ext-pack
 ```
 
 Siga as instruções na tela para prosseguir.
 
 Agora é hora de instalar o Vagrant:
 
-```
-$ sudo apt install vagrant
+```bash
+sudo apt install vagrant
 ```
 
 Se você está usando um PC com Windows, primeiro, faça o [download do VirtualBox](https://www.virtualbox.org/wiki/Downloads) e baixe também o **VirtualBox Oracle VM VirtualBox Extension Pack** para a mesma versão (ele é necessário para compatibilidade com USB).
@@ -36,33 +36,36 @@ Você precisa reservar cerca de 30GB para comportar todas as ferramentas necess�
 
 Faça o download do repositório:
 
-```
-$ git clone https://github.com/joaocarlos/fpga-dev-vagrant.git
-$ cd fpga-dev-vagrant
+```bash
+git clone https://github.com/joaocarlos/fpga-dev-vagrant.git
+cd fpga-dev-vagrant
 ```
 
 Agora você deve poderá iniciar o seu ambiente:
 
-```
-$ vagrant up
+```bash
+vagrant up
 ```
 
 Na primeira execução o Vagrant irá fazer o download da imagem Linux e dos componentes para instalação do Quartus Prime. Isso pode levar um tempo, então prepare uma xícara de café.
 
 Você não precisará se preocupar com nada, uma vez que o script `vagrant/bootstrap.sh` se encarregará de instalar todas as dependências, fazer o download do Quartus Prime e instalar os componentes necessários.
 
-Note que a variável de ambiente `QUARTUS_DISABLED` determina quais componentes **não** serão instalados. Certifique-se de selecionar tudo o que você precisa. Se preferir, poderá desabilitar o `modelsim_ase` para salvar espaço em disco e utilizar um simulador open-source, como [Icarus Verilog](http://iverilog.icarus.com) ou [Verilator](https://www.veripool.org/wiki/verilator).
+Note que a variável de ambiente `QUARTUS_DISABLED` determina quais componentes **não** serão instalados. Certifique-se de selecionar tudo o que você precisa.
 
-Para acessar o seu ambiente o vagrant utiliza o protocolo SSH. O arquivo de configuração já habilita o encaminhamento das janelas do servidor `Xorg`.
+> 💁 Se preferir, poderá desabilitar o `modelsim_ase` para salvar espaço em disco e utilizar um simulador open-source, como [Icarus Verilog](http://iverilog.icarus.com) ou [Verilator](https://www.veripool.org/wiki/verilator).
 
+Para acessar o seu ambiente o Vagrant utiliza o protocolo SSH. O arquivo de configuração já habilita o encaminhamento das janelas do servidor `Xorg`.
+
+```bash
+vagrant ssh
 ```
-$ vagrant ssh
-```
 
-Agora tente abrir o Quartus Prime:
+Agora tente abrir o Quartus Prime ou o ModelSim usando os comandos:
 
-```
-$ quartus &
+```bash
+quartus &
+vsim &
 ```
 
 ## Recursos

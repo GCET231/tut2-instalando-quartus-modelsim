@@ -11,11 +11,11 @@ Segundo a [a página de suporte da Intel](https://www.intel.com/content/www/us/e
 
 ## Fazendo o Download da Ferramenta
 
-Existem algumas versões do mesmo, sendo a versão Pro a mais completa e a Lite a mais simplista. Neste tutorial, será apresentada a instalação da versão Lite, uma vez que esta é a única versão gratis do mesmo. A ferramenta pode ser baixada no site da [Intel](https://fpgasoftware.intel.com/?edition=lite&platform=windows).
+Existem algumas versões do Quartus Prime, sendo a versão Pro a mais completa e a Lite a mais simplista. Neste tutorial, será apresentada a instalação da versão Lite, uma vez que esta é a única versão gratis. A ferramenta pode ser baixada no site da [Intel](https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html?edition=lite&platform=windows&s=Newest&f:guidetmD240C377263B4C70A4EA0E452D0182CA=%5BIntel®%20Quartus®%20Prime%20Design%20Software%3BIntel®%20Quartus®%20Prime%20Lite%20Edition%5D&f:os-rdc=%5BMicrosoft%20Windows*%5D).
 
 Para realizar o download, é necessário uma conta no Programa de FPGAs Intel. A criação desta conta é gratuita, podendo ser realizada [neste link](https://www.intel.com/content/www/us/en/forms/fpga/fpga-individual-registration.html).
 
-É recomendado que você realize o download da versão mais recente, desde que haja suporte para o seu dispositivo. Para a versão 20.1.1, escolhendo a opção de Arquivos Combinados (_Combined Files_), que possui o tamanho de 5.9 GB. Certifique-se de que o seu sistema atende aos requisitos mínimos para instalação [clicando aqui](https://fpgasoftware.intel.com/requirements/20.1.1/). Caso não atenda aos requisitos de hardware, selecione uma versão anterior (a 16.1, por exemplo). Eis aqui um resumo dos requisitos mínimos para simplificar:
+É recomendado que você realize o download da versão mais recente, desde que haja suporte para o seu dispositivo. Para a versão 20.1.1, escolhendo a opção de Arquivos Combinados (_Combined Files_), que possui o tamanho de 5.9 GB. Certifique-se de que o seu sistema atende aos requisitos mínimos para instalação [clicando aqui](https://www.intel.com/content/www/us/en/software-kit/660907/intel-quartus-prime-lite-edition-design-software-version-20-1-1-for-windows.html). Caso não atenda aos requisitos de hardware, selecione uma versão anterior (a 16.1, por exemplo). Eis aqui um resumo dos requisitos mínimos para simplificar:
 
 - Espaço em disco: 14GB
 - Entre 512MB e 2GB de RAM
@@ -24,13 +24,13 @@ Para realizar o download, é necessário uma conta no Programa de FPGAs Intel. A
 
 Após o download do Quartus Prime, é a fez de realizar a instalação do sistema. Primeiramente, o arquivo baixado deve ser descompactado.
 
-Na pasta components, estão os executáveis para a instalação do Quartus Prime. Você pode escolher executar os instaladores separadente, lembrando-se de iniciar pelo _QuartusLiteSetup-20.1.1.720.exe_. Para executar a instalação completa, clique duas vezes no scripts _setup.bat_ e siga as instruções na tela.
+Na pasta `components`, estão os executáveis para a instalação do Quartus Prime. Você pode escolher executar os instaladores separadamente, lembrando-se de iniciar pelo _QuartusLiteSetup-20.1.1.720.exe_. Para executar a instalação completa, clique duas vezes no scripts _setup.bat_ e siga as instruções na tela.
 
-Na tela inicial você deve aceitar a licença para a instalação do Quartus Prime. Após o termo de aceite, é hora de escolher a pasta onde o Quartus Prime será instalado. Recomendamos o uso da pasta `C:\intelFPGA\20.1`, muito parecida com a sugestão original, exceto pelo fato da pasta padrão ser chamada de `intelFPGA_lite`.
+Na tela inicial você deve aceitar a licença para a instalação do Quartus Prime. Após o termo de aceite, é hora de escolher a pasta onde o Quartus Prime será instalado. Recomendamos o uso da pasta `C:\intelFPGA\20.1.1`, muito parecida com a sugestão original, exceto pelo fato da pasta padrão ser chamada de `intelFPGA_lite`.
 
-Agora escolha quais componentes serão instalados. Você pode escolher fazer a instalação de cada _software_ (_Quartus Prime, Quartus Help e ModelSim_) separadamente. Entretanto, para este tutorial vamos selecionar todos os componentes necessários. Você pode reduzir o tempo de instalação e o espaço ocupado em disco, retirando os _Devices_ não utilizados. Para nosso curso, precisaremos apenas do Cyclone IV. Certifique-se de selecionar a versão Starter Edition do ModelSim. A escolha dos componentes deve ser igual à imagem abaixo:
+Agora escolha quais componentes serão instalados. Você pode escolher fazer a instalação de cada _software_ (_Quartus Prime, Quartus Help e ModelSim_) separadamente. Entretanto, para este tutorial vamos selecionar todos os componentes necessários. Você pode reduzir o tempo de instalação e o espaço ocupado em disco, retirando os _Devices_ não utilizados. Para nosso curso, precisaremos apenas do Cyclone IV. Certifique-se de selecionar a versão **Starter Edition** do ModelSim. A escolha dos componentes deve ser igual à imagem abaixo:
 
-![Componentes que devem ser instalados nesta parte do tutorial](https://github.com/GCET231/tutorial2-instalando-quartus-modelsim/blob/main/img/windows-components.png)
+![Componentes que devem ser instalados nesta parte do tutorial](../../img/windows-components.png)
 
 Após essa etapa, é necessário prosseguir com a instalação, aguardando a tela de confirmação. Chegando nesta tela, mantenha as caixas de seleção como está e pressione o botão _Finish_ para fechar a interface gráfica.
 
@@ -40,10 +40,11 @@ Certifique-se de que a instalação foi bem sucedida, e na primeira execução s
 
 ### Configurando o ambiente de simulação
 
-Para podermos executar o ModelSim diretamente a partir do Quartus Prime para simular o funcionamento do nosso circuito, é necessário realizar uma configuração simples. Abra o Quartus Prime e acesse o painel `EDA Tool Options` acessado através do menu `Tools > Options` para especificar a localização do simulador. No campo ferente ao `ModelSim-Intel`, introduza o caminho onde se encontra o executável do ModelSim Intel FPGA Edition:
+Para podermos executar o ModelSim diretamente a partir do Quartus Prime e simular o funcionamento do nosso circuito, é necessário realizar uma configuração simples. Abra o Quartus Prime e acesse o painel `EDA Tool Options` acessado através do menu `Tools > Options` para especificar a localização do simulador. No campo ferente ao `ModelSim-Intel`, introduza o caminho onde se encontra o executável do ModelSim Intel FPGA Edition:
 
-- No Linux: `<QUARTUS_INSTALL_DIR>/modelsim_ase/linuxaloem`
-- No Windows: `<QUARTUS_INSTALL_DIR>/modelsim_ase/win32aloem`
+```<QUARTUS_INSTALL_DIR>/modelsim_ase/win32aloem
+
+```
 
 ![Configuração do Diretório do ModelSim](https://github.com/GCET231/tutorial3-simulacao-hdl/blob/main/Quartus-Prime-ModelSim/images/91-eda_tools.png)
 
@@ -61,19 +62,19 @@ Mais informações sobre como utilizar os scripts de linha de comando para acele
 
 Desde a introdução do Windows 10, a Microsoft apresentou para a comunidade o [PowerShell](https://docs.microsoft.com/en-us/powershell/).
 
-> _PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language. Unlike most shells, which accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET objects. This fundamental change brings entirely new tools and methods for automation._
+> 💬 _PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language. Unlike most shells, which accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET objects. This fundamental change brings entirely new tools and methods for automation._
 
-Dessa forma, os usuários do Windows podem agora tirar proveito de topo o poder dos scripts de automação para desenvolver suas aplicações.
+Dessa forma, os usuários do Windows podem agora tirar proveito de todo o poder dos _scripts_ de automação para desenvolver suas aplicações.
 
 Para ser capaz de acessar aos executáveis do Quartus Prime e do ModelSim através da linha de comando o primeiro passo é incluir o caminho para os binários à variável de ambiente `PATH`. Para isso, você pode usar o comando:
 
-```
+```bash
 $env:Path += ";C:\intelFPGA\20.1\quartus\bin64"
 ```
 
 O mesmo deve ser feito para acessar aos comandos do ModelSim:
 
-```
+```bash
 $env:Path += ";C:\intelFPGA\20.1\modelsim_ase\win32aloem"
 ```
 
@@ -81,7 +82,7 @@ Agora tente executar o comando `quartus_sh` no PowerShell. Se tudo correr bem, v
 
 Nos nossos laboratórios, utilizaremos, além de scripts `TCL`, arquivos make (`Makefile`) para automatizar nosso fluxo de tarefas. Para instalar o make no Windows, você pode o [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm). Em seguida, adicione o make à variável de ambiente `PATH`.
 
-```
+```bash
 $env:Path += ";C:\Program Files (x86)\GnuWin32\bin"
 ```
 
