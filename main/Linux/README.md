@@ -116,7 +116,7 @@ A integração do Quartus Prime com o sistema operacional não é necessária, m
 Para conseguir executar o Quartus Prime a partir de um terminal sem ser necessário digitar o caminho completo, você pode criar uma variável `PATH` para isso. Primeiramente, é preciso criar o arquivo `quartus.sh` dentro do diretório `/etc/profile.d` com o seguinte conteúdo:
 
 ```bash
-export PATH=$PATH:/home/${USER}/intelFPGA/20.1/quartus/bin
+export PATH=$PATH:/home/${USER}/intelFPGA/20.1.1/quartus/bin
 ```
 
 Após isso, é necessário tornar o arquivo executável com o comando:
@@ -128,7 +128,7 @@ chmod +x /etc/profile.d/quartus.sh
 Repita o procedimento para o ModelSim, criando um arquivo `modelsim.sh` dentro do diretório `/etc/profile` utilizando agora o conteúdo:
 
 ```bash
-export PATH=$PATH:/home/${USER}/intelFPGA/20.1/modelsim_ase/bin
+export PATH=$PATH:/home/${USER}/intelFPGA/20.1.1/modelsim_ase/bin
 ```
 
 Após isso, é necessário tornar o arquivo executável com o comando:
@@ -162,11 +162,13 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6810", MODE="0666"
 
 O arquivo deve ser _recarregado_ usando o comando `udevadm`.
 
-> **Atenção:** Todos os componentes Intel FPGA deve estar desconectado antes de executar esse comando!
+> **Atenção:** Todos os componentes Intel FPGA devem estar desconectados antes de executar esse comando!
 
 ```bash
 udevadm control --reload
 ```
+
+> Para simplificar, você pode usar o script disponível [nesse arquivo](../scripts/quartus-setup.sh).
 
 Para verificar se a instalação foi bem sucedida, conecte o dispositivo FPGA e execute:
 
